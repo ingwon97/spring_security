@@ -18,7 +18,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .formLogin();
         http
-                .sessionManagement()
-                .sessionFixation().changeSessionId();
+                .csrf();
     }
 }
