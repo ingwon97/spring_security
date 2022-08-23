@@ -20,9 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
         http
                 .formLogin();
-        http
-                .rememberMe()
-                .userDetailsService(userDetailsService);
+
     }
 
 }
