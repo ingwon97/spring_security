@@ -11,16 +11,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
-
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
                 .anyRequest().authenticated();
         http
                 .formLogin();
-
+        http
+                .sessionManagement()
+                .sessionFixation().changeSessionId();
     }
-
 }
